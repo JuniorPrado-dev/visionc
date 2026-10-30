@@ -1,0 +1,333 @@
+/* MainPage.module.css */
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.header {
+  background-color: #1e293b;
+  padding: 1.25rem 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.navButton {
+  background-color: transparent;
+  border: 2px solid transparent;
+  color: #94a3b8;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.6rem 1.5rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+}
+
+.navButton:hover {
+  color: #f8fafc;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.navButton.active {
+  color: #ffffff;
+  background-color: #3b82f6;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.mainContent {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 3rem 1rem;
+}
+
+.card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 550px;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  text-align: center;
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.title {
+  color: #0f172a;
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: #334155;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  align-self: flex-start;
+}
+
+/* Oculta o input padrão feio */
+.fileInput {
+  display: none !important;
+}
+
+.uploadArea, .uploadGroup {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.uploadButton, .actionButton {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.875rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box; /* <--- ADICIONE ESTA LINHA */
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+}
+
+.uploadButton {
+  background-color: #f1f5f9;
+  color: #334155;
+  border: 2px dashed #cbd5e1;
+  box-shadow: none;
+}
+
+.uploadButton:hover {
+  background-color: #e2e8f0;
+  border-color: #94a3b8;
+}
+
+.actionButton:hover {
+  background-color: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3);
+}
+
+.actionButton:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.previewContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.imagePreview {
+  width: 100%;
+  max-height: 350px;
+  object-fit: contain;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background-color: #f8fafc;
+  padding: 0.5rem;
+}
+
+.resultArea {
+  width: 100%;
+  background-color: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  border-radius: 12px;
+  padding: 1.25rem;
+  color: #065f46;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.resultArea h3 {
+  margin: 0;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.8;
+}
+
+.predictionText {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.errorText {
+  color: #b91c1c;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  padding: 1rem;
+  border-radius: 8px;
+  width: 100%;
+  font-weight: 500;
+}
+
+/* Detecção e Controlos */
+.controlsRow {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  align-items: stretch;
+}
+
+.selectInput {
+  flex: 0.4;
+  padding: 0.875rem;
+  border-radius: 8px;
+  border: 2px solid #e2e8f0;
+  background-color: #f8fafc;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #334155;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.selectInput:focus {
+  border-color: #3b82f6;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.downloadButton {
+  flex: 1;
+  background-color: #10b981;
+  color: white;
+  border: none;
+  padding: 0.875rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.downloadButton:hover {
+  background-color: #059669;
+}
+
+.secondaryButton {
+  flex: 1;
+  background-color: #64748b;
+  color: white;
+  border: none;
+  padding: 0.875rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.secondaryButton:hover {
+  background-color: #475569;
+}
+
+/* Utilitários - SubMenu */
+.subMenu {
+  display: flex;
+  width: 100%;
+  background-color: #f1f5f9;
+  border-radius: 10px;
+  padding: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.subBtn {
+  flex: 1;
+  background: none;
+  border: none;
+  padding: 0.6rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #64748b;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.subBtn:hover {
+  color: #1e293b;
+}
+
+.subBtnActive {
+  flex: 1;
+  background-color: white;
+  border: none;
+  padding: 0.6rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #3b82f6;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.utilSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.instructions {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .controlsRow {
+    flex-direction: column;
+  }
+  .buttonGroup {
+    flex-direction: column;
+  }
+  .nav {
+    flex-wrap: wrap;
+  }
+}
